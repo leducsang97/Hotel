@@ -9,13 +9,16 @@ import javafx.collections.ObservableList;
 public class Hotel {
 
     private ArrayList<Room> rooms;
+    private unPlaced unPlaced;
 
     public Hotel() {
         rooms = new ArrayList<Room>();
+        unPlaced = new unPlaced();
     }
 
     public void readFrom(Scanner input) {
         // Read the unplace first
+        //unPlaced.readFrom(input);
         // Read the five rooms from the input file
         for (int n = 0; n < 5; n++) {
             Room newRoom = new Room();
@@ -24,21 +27,9 @@ public class Hotel {
         }
     }
 
-    public void unplaceRead(Scanner input) {
-        String name = input.next() + input.nextLine();
-        int howMany = input.nextInt();
-        ObservableList<Reservation> reservations;
-        reservations = FXCollections.observableArrayList();
-        for (int n = 0; n < howMany; n++) {
-            Reservation nextReservation = new Reservation();
-            nextReservation.readFrom(input);
-
-            reservations.add(nextReservation);
-        }
-        FXCollections.sort(reservations);
-    }
-
+    
     public void writeTo(PrintWriter output) {
+        //unPlaced.writeTo(output);
         for (Room r : rooms) {
             r.writeTo(output);
         }
@@ -53,7 +44,9 @@ public class Hotel {
         }
         return null;
     }
-
+    public unPlaced getUnPlaced(){
+        return unPlaced;
+    }
     public ArrayList<Room> getRooms() {
         return rooms;
     }

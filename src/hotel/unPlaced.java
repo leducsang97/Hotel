@@ -18,6 +18,8 @@ public class unPlaced {
      private String name = "Unplaced";
     private ObservableList<Reservation> reservations;
     
+     public unPlaced() { reservations = FXCollections.observableArrayList(); }
+     
     public void addReservation(Reservation newReservation) {
         reservations.add(newReservation);
         FXCollections.sort(reservations);
