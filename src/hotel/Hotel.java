@@ -9,11 +9,11 @@ import javafx.collections.ObservableList;
 public class Hotel {
 
     private ArrayList<Room> rooms;
-    private unPlaced unPlaced;
+    //private unPlaced unPlaced;
 
     public Hotel() {
         rooms = new ArrayList<Room>();
-        unPlaced = new unPlaced();
+        //unPlaced = new unPlaced();
     }
 
     public void readFrom(Scanner input) {
@@ -44,9 +44,9 @@ public class Hotel {
         }
         return null;
     }
-    public unPlaced getUnPlaced(){
-        return unPlaced;
-    }
+//    public unPlaced getUnPlaced(){
+//        return unPlaced;
+//    }
     public ArrayList<Room> getRooms() {
         return rooms;
     }
