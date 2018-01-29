@@ -113,7 +113,9 @@ public class FXMLDocumentController implements Initializable {
         PrintWriter output = null;
         try { 
             output = new PrintWriter(new File("events.txt"));
+            
             model.writeTo(output);
+            rooms.writeTo(output);
             output.close();
         } catch(Exception ex) {
             System.out.println("Error writing data to text file");
@@ -135,6 +137,8 @@ public class FXMLDocumentController implements Initializable {
         try {
             input = new Scanner(new File("events.txt"));
             model.readFrom(input);
+             rooms = new RoomsPane(model,selectedDate);
+            rooms.readFrom(input);
             input.close();
         } catch (Exception ex) {
             System.out.println("Can not load data file.");
@@ -143,10 +147,10 @@ public class FXMLDocumentController implements Initializable {
                 input.close();
         }
         
-        rooms = new RoomsPane(model,selectedDate);
+       
         ScrollPane holder = new ScrollPane();
         selected = rooms.getSelected();
-
+        
         holder.setContent(rooms);
         innerPane.setCenter(holder);
     }    

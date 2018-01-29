@@ -13,7 +13,7 @@ public class Room {
     public Room() { reservations = FXCollections.observableArrayList(); }
     
     public String getName() { return name; }
-    
+   
     public boolean allowsReservation(Reservation newReservation) {
         if(newReservation.getGroupSize() > capacity) 
             return false;

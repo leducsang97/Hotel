@@ -13,7 +13,7 @@ import javafx.scene.control.Label;
 /**
  * FXML Controller class
  *
- * @author Joe Gregg
+ * @author Sang Le based on prof Gregg.
  */
 public class FXMLNewReservationDialogController implements Initializable {
 
@@ -48,6 +48,7 @@ public class FXMLNewReservationDialogController implements Initializable {
         int end = Integer.parseInt(endTime.getText());
         int size = Integer.parseInt(groupSize.getText());
         Reservation newEvent = new Reservation(evtNumber, custNumber, date, start, end, size);
+        
         if (current != null) {
             rooms.editReservation(current, newEvent);
             eventNumber.getScene().getWindow().hide();

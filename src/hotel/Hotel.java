@@ -44,9 +44,7 @@ public class Hotel {
         }
         return null;
     }
-//    public unPlaced getUnPlaced(){
-//        return unPlaced;
-//    }
+
     public ArrayList<Room> getRooms() {
         return rooms;
     }
